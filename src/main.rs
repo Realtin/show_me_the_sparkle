@@ -9,5 +9,11 @@ fn main() {
 
     // To print the contents of the file
     let filestr = String::from_utf8(data).unwrap();
-    println!("{}", filestr);
+
+    let mut result: Vec<String> = Vec::new();
+    for line in filestr.lines_any() {
+        result.push(line.to_string());
+    }
+
+    println!("{}", result[5]);
 }
